@@ -19,6 +19,9 @@ class Product extends ITimeStamp {
   @Column('double')
   value: number;
 
+  @Column('text')
+  type: string;
+
   constructor() {
     super();
   }

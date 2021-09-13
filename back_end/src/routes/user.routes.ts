@@ -1,6 +1,6 @@
 import { getRepository, Repository } from 'typeorm';
 import { Router } from "express";
-import { User } from '../entity/User';
+import { User } from '../database/entity/User';
 
 const userRoutes = Router();
 

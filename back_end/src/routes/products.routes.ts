@@ -1,6 +1,6 @@
 import { getRepository } from 'typeorm';
 import { Router } from "express";
-import { Product } from '../entity/Product';
+import { Product } from '../database/entity/Product';
 
 const productsRoutes = Router();
 
@@ -36,12 +36,13 @@ productsRoutes.post('/', async (request, response) => {
   const products = getRepository(Product);
 
   try {
-    const { value, image, name } = request.body;
+    const { value, image, name, type } = request.body;
   
     const product: Product = {
       name,
       image,
       value,
+      type,
       createdAt: new Date(),
       updatedAt: new Date()
     };
